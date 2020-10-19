@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback example</title>
+    <style>
+        html,
+        body {
+            background: rgb(238, 238, 238);
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+</body>
+
+<script src="../dist/feedback-js.min.js"></script>
+<script>
+    function addFeedback() {
+        const options = {
+            id: 'test',
+            endpoint: 'http://192.168.44.30:6600/form/feedback',
+			contactLink: 'mailto:hello@mxis.ch?subject=Feedback'
+        }
+        
+        new Feedback(options).attach();
+    }
+    window.addEventListener('load', addFeedback);
+</script>
+</html>
