@@ -18,7 +18,7 @@ export default class Feedback {
 			btnTitle: 'Feedback',
 			title: 'Feedback',
 			contactText: 'Want to chat?',
-			contactLink: 'mailto:',
+			contactLink: '',
 			typeMessage: 'What feedback do you have?',
 			success: 'Thanks! 👊',
 			failedTitle: 'Oops, an error ocurred!',
@@ -63,7 +63,7 @@ export default class Feedback {
 				<div class="feedback-main">
 					<div class="feedback-header">
 						<p>${ this.options.title }</p>
-						<a href="${ this.options.contactLink }">${ this.options.contactText }</a>
+						${ this.options.contactLink.length > 0 ? '<a href=' + this.options.contactLink + '>' + this.options.contactText + '</a>' : '' }
 					</div>
 					<div class="feedback-content">
 						<p>${ this.options.typeMessage }</p>
