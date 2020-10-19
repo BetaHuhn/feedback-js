@@ -79,11 +79,11 @@ You will have to handle the submission on the backend yourself. [feedback-js](ht
 
 ```json
 {
-    id: 'example',
-    user: 'hello@mxis.ch',
-    feedbackType: 'issue',
-    url: 'https://example.com',
-    message: 'When I click x nothing happens.'
+    "id": "example",
+    "user": "hello@mxis.ch",
+    "feedbackType": "issue",
+    "url": "https://example.com",
+    "message": "When I click x nothing happens."
 }
 ```
 
