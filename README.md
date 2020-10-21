@@ -8,7 +8,7 @@ Simple self-hosted feedback modal for any website
 
 ![preview](https://cdn.mxis.ch/assets/feedback-js/preview.gif)
 
-[🔮 Live Demo]()
+[🔮 Live Demo](https://codepen.io/BetaHuhn/pen/MWebeXp)
 <br/>
 
 </div>
