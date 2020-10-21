@@ -15,7 +15,7 @@ Simple self-hosted feedback modal for any website
 
 ## 👋 Introduction
 
-[feedback-js](https://github.com/BetaHuhn/feedback-js) lets you add a feedback modal to any website. Just include the script below to your website and run the [example]() Node.js server to handle the form submission.
+[feedback-js](https://github.com/BetaHuhn/feedback-js) lets you add a feedback modal to any website. Just include the script below to your website and run the [example](https://github.com/BetaHuhn/feedback-js/blob/master/example/server.js) Node.js server to handle the form submission.
 
 ## 🚀 Get started
 
