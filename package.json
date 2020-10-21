@@ -1,7 +1,7 @@
 {
   "name": "@betahuhn/feedback-js",
-  "version": "0.2.0",
-  "description": "",
+  "version": "0.3.0",
+  "description": "Simple self-hosted feedback modal for any website",
   "main": "dist/feedback-js.min.js",
   "scripts": {
     "lint": "eslint ./src/",
@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/BetaHuhn/feedback-js.git"
   },
-  "author": "Maximilian Schiller <schiller@mxis.ch>",
+  "author": "Maximilian Schiller <hello@mxis.ch>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/BetaHuhn/feedback-js/issues"
