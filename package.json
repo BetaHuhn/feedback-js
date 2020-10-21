@@ -1,5 +1,5 @@
 {
-  "name": "feedback-js",
+  "name": "@betahuhn/feedback-js",
   "version": "0.2.0",
   "description": "",
   "main": "dist/feedback-js.min.js",
