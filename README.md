@@ -1,11 +1,12 @@
 <div align="center">
 
-
 # feedback-js
 
 [![Build](https://github.com/BetaHuhn/feedback-js/workflows/Build/badge.svg)](https://github.com/BetaHuhn/feedback-js/actions?query=workflow%3ABuild) [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/BetaHuhn/feedback-js/blob/master/LICENSE) ![David](https://img.shields.io/david/betahuhn/feedback-js) [![npm](https://img.shields.io/npm/v/feedback-js)](https://www.npmjs.com/package/feedback-js) [![npm bundle size](https://img.badgesize.io/betahuhn/feedback-js/master/dist/feedback-js.min.js?compression=gzip)](https://github.com/BetaHuhn/feedback-js)
 
 Simple self-hosted feedback modal for any website
+
+![preview](https://cdn.mxis.ch/assets/feedback-js/preview.gif)
 
 [🔮 Live Demo]()
 <br/>
