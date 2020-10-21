@@ -24,7 +24,7 @@ Simple self-hosted feedback modal for any website
 Add this to your HTML page:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/feedback-js/dist/feedback-js.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@betahuhn/feedback-js/dist/feedback-js.min.js"></script>
 <script>
     function addFeedback() {
         const options = {
@@ -49,7 +49,7 @@ npm install feedback-js
 Then add the following JavaScript code:
 
 ```javascript
-import Feedback from 'feedback-js';
+import Feedback from '@betahuhn/feedback-js';
 
 const options = {
     id: 'example', // id to identify the form on the backend
