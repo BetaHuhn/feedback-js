@@ -14,7 +14,7 @@ export default class Feedback {
 		const defaultOptions = {
 			id: 'feedback',
 			endpoint: '',
-			user: 'anonymous',
+			emailField: false,
 			btnTitle: 'Feedback',
 			title: 'Feedback',
 			contactText: 'Want to chat?',
@@ -124,6 +124,7 @@ export default class Feedback {
 						<p>${ title }</p>
 					</div>
 					<div class="feedback-content">
+							${ this.options.emailField ? '<input id="feedback-email" type="email" name="email" placeholder="Email address (optional)">' : '' }
 							<textarea id="feedback-message" name="feedback" autofocus type="text" maxlength="500" rows="5" placeholder="${ message }"></textarea>
 							<div id="feedback-actions" class="feedback-actions">
 								<button type="button" id="feedback-back">Back</button>
@@ -142,6 +143,8 @@ export default class Feedback {
 		this.current = type
 		this.root.innerHTML = html
 
+		document.getElementById('feedback-message').focus()
+
 		const button = document.getElementById('feedback-close')
 		button.addEventListener('click', () => {
 			this._renderButton()
@@ -155,7 +158,8 @@ export default class Feedback {
 		const submit = document.getElementById('feedback-submit')
 		submit.addEventListener('click', () => {
 			const message = document.getElementById('feedback-message').value
-			this.sendFeedback(this.current, message, window.location.href)
+			const email = this.options.emailField ? document.getElementById('feedback-email').value : ''
+			this.send(this.current, message, window.location.href, email.length > 0 ? email : undefined)
 		})
 	}
 
@@ -225,9 +229,10 @@ export default class Feedback {
 	 * Send feedback to backend
 	 * @param {string} feedbackType - type of feedback
 	 * @param {string} message - the actual feedback message
-	 * @param {string} url - url/page the feedback was collected on
+	 * @param {string} [url] - url/page the feedback was collected on
+	 * @param {string} [email] - email of user optional
 	 */
-	sendFeedback(feedbackType, message, url) {
+	send(feedbackType, message, url, email) {
 		if (!feedbackType || !message) {
 			if (!this.root) throw new Error('missing parameters')
 			return
@@ -235,7 +240,7 @@ export default class Feedback {
 
 		const parsedData = {
 			id: this.options.id,
-			user: this.options.user,
+			email: email,
 			feedbackType: feedbackType,
 			url: url,
 			message: message
@@ -348,16 +353,36 @@ export default class Feedback {
 				margin-bottom: 0.6rem;
 			}
 
+			.feedback-content input{
+				border: 3px solid ${ this.options.background };
+				filter: brightness(95%);
+				border-radius: 10px;
+				outline: 0;
+				padding: 10px;
+				margin-bottom: 0.5rem;
+				width: 100%;
+				box-sizing: border-box;
+				font-size: 1rem;
+				font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+			}
+
 			.feedback-content textarea{
 				overflow: auto;
-				border: 3px solid ${ this.options.primary };
+				border: 3px solid ${ this.options.background };
+				filter: brightness(95%);
 				border-radius: 10px;
 				outline: 0;
 				padding: 10px;
 				width: 100%;
 				box-sizing: border-box;
 				resize: none;
+				font-size: 1rem;
 				font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+			}
+
+			.feedback-content textarea:focus,
+			.feedback-content input:focus{
+				border: 3px solid ${ this.options.primary };
 			}
 
 			.feedback-actions{
@@ -449,7 +474,6 @@ export default class Feedback {
 				}
 			}
 			  
-
 			.feedback-content-list{
 				display: flex;
 				flex-direction: column;

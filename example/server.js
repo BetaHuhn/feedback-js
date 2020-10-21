@@ -4,10 +4,10 @@ const app = express()
 const port = 3000
 
 app.post('/feedback', async (req, res) => {
-	const { id, feedbackType, message, user, url } = req.body
+	const { id, feedbackType, message, email, url } = req.body
 
-	console.log(`New ${ feedbackType } feedback for form ${ id } from user ${ user } on page ${ url }: ${ message }`)
-	// do something with feedback
+	console.log(`New ${ feedbackType } feedback for form ${ id } from user ${ email } on page ${ url }: ${ message }`)
+	// do something with data
 
 	res.send('ok')
 })

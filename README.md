@@ -80,7 +80,7 @@ You will have to handle the submission on the backend yourself. [feedback-js](ht
 ```json
 {
     "id": "example",
-    "user": "hello@mxis.ch",
+    "email": "hello@mxis.ch",
     "feedbackType": "issue",
     "url": "https://example.com",
     "message": "When I click x nothing happens."
@@ -95,9 +95,9 @@ const app = express()
 const port = 3000
 
 app.post('/feedback', async (req, res) => {
-	const { id, feedbackType, message, user, url } = req.body
+	const { id, feedbackType, message, email, url } = req.body
 
-	console.log(`New ${ feedbackType } feedback for form ${ id } from user ${ user } on page ${ url }: ${ message }`)
+	console.log(`New ${ feedbackType } feedback for form ${ id } from user ${ email } on page ${ url }: ${ message }`)
 	// do something with feedback
 
 	res.send('ok')
@@ -114,7 +114,7 @@ If you don't want to show the button and send feedback programatically you can u
 
 ```javascript
 const feedback = new Feedback(options);
-feedback.sendFeedback('feedbackType', 'message', 'url');
+feedback.send('feedbackType', 'message', 'url', 'email');
 ```
 
 ## ⚙️ Options
@@ -125,7 +125,7 @@ You can customize [feedback-js](https://github.com/BetaHuhn/feedback-js) by pass
 const options = {
     id: 'feedback', // id to identify the form on the backend
     endpoint: 'https://example.com/feedback', // enpoint of your backend to handle the submission
-    user: 'hello@mxis.ch', // userId in your system, email address or other identifier
+    emailField: true, // show email input field, default: false
     btnTitle: 'Feedback', // title of button
     title: 'Company Feedback', // text at the top
     contactText: 'Or send an email!', // text for other contact option
