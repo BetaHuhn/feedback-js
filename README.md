@@ -109,9 +109,9 @@ app.listen(port, () => {
 })
 ```
 
-## 🛠️ Manuall usage
+## 🛠️ Manual usage
 
-If you don't want to show the button and send feedback programatically you can use the method `sendFeedback()`:
+If you don't want to show the button and send feedback programatically you can use the method `send()`:
 
 ```javascript
 const feedback = new Feedback(options);
@@ -135,7 +135,7 @@ const options = {
     success: 'Thanks! 👊', // message displayed on successfull submission
     failedTitle: 'Oops, an error ocurred!', // title displayed on error
     failedMessage: 'Please try again. If this keeps happening, try to send an email instead.', // default error message if backend doesn't return one
-    position: 'right', // position of button lef/right
+    position: 'right', // position of button left/right
     primary: 'rgb(53, 222, 118)', // primary color
     background: '#fff', // background color
     color: '#000' // font color
