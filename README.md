@@ -43,7 +43,7 @@ Add this to your HTML page:
 Install [feedback-js](https://github.com/BetaHuhn/feedback-js) using NPM
 
 ```sh
-npm install feedback-js
+npm install @betahuhn/feedback-js
 ```
 
 Then add the following JavaScript code:
