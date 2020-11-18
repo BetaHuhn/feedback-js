@@ -3,7 +3,7 @@ on:
   release:
     types: [created]
 jobs:
-  publish:
+  npm:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
