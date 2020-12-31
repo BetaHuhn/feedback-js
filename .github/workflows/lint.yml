@@ -1,9 +1,11 @@
-name: Lint
+name: Lint CI
 on:
   push:
-    branches: [ master ]
+    branches-ignore:
+      - master
   pull_request:
-    branches: [ master ]
+    branches-ignore:
+      - master
 jobs:
   lint:
     runs-on: ubuntu-latest
