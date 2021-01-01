@@ -1,4 +1,11 @@
+blank_issues_enabled: false
 contact_links:
   - name: 📚 Docs
     url: https://github.com/BetaHuhn/feedback-js#-setup
-    about: Checkout the feedback-js documentation before you open an issue.
+    about: Checkout the feedback-js documentation
+  - name: 🚀 Feature Request
+    url: https://github.com/BetaHuhn/feedback-js/discussions/new?category=ideas
+    about: Share ideas for new features
+  - name: ❓ Ask a Question
+    url: https://github.com/BetaHuhn/feedback-js/discussions/new?category=q-a
+    about: Ask the community for help
