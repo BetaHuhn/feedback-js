@@ -1,3 +1,7 @@
+## [v1.0.4] - 2021-02-22
+
+[Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v1.0.4) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v1.0.3...v1.0.4) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v1.0.4) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v1.0.4.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v1.0.4.tar.gz))
+
 ## [v1.0.3] - 2021-02-08
 
 [Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v1.0.3) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v1.0.2...v1.0.3) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v1.0.3) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v1.0.3.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v1.0.3.tar.gz))
