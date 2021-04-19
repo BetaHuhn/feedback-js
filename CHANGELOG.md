@@ -1,3 +1,13 @@
+## [v1.0.10] - 2021-04-19
+
+[Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v1.0.10) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v1.0.9...v1.0.10) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v1.0.10) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v1.0.10.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v1.0.10.tar.gz))
+
+### Dependency updates
+
+- [`ab956b3`](https://github.com/BetaHuhn/feedback-js/commit/ab956b3)  Bump eslint from 7.23.0 to 7.24.0
+- [`0b9be89`](https://github.com/BetaHuhn/feedback-js/commit/0b9be89)  Bump stefanzweifel/git-auto-commit-action
+- [`17189d4`](https://github.com/BetaHuhn/feedback-js/commit/17189d4)  Bump @betahuhn/config from 1.0.2 to 1.1.0
+
 ## [v1.0.9] - 2021-04-05
 
 [Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v1.0.9) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v1.0.8...v1.0.9) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v1.0.9) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v1.0.9.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v1.0.9.tar.gz))
