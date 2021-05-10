@@ -1,3 +1,11 @@
+## [v1.0.12] - 2021-05-10
+
+[Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v1.0.12) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v1.0.11...v1.0.12) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v1.0.12) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v1.0.12.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v1.0.12.tar.gz))
+
+### Dependency updates
+
+- [`d2e7e23`](https://github.com/BetaHuhn/feedback-js/commit/d2e7e23)  Bump stefanzweifel/git-auto-commit-action
+
 ## [v1.0.11] - 2021-05-03
 
 [Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v1.0.11) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v1.0.10...v1.0.11) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v1.0.11) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v1.0.11.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v1.0.11.tar.gz))
