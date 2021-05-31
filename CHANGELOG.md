@@ -1,3 +1,12 @@
+## [v1.0.14] - 2021-05-31
+
+[Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v1.0.14) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v1.0.13...v1.0.14) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v1.0.14) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v1.0.14.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v1.0.14.tar.gz))
+
+### Dependency updates
+
+- [`749cf34`](https://github.com/BetaHuhn/feedback-js/commit/749cf34)  Bump eslint from 7.26.0 to 7.27.0
+- [`6e34870`](https://github.com/BetaHuhn/feedback-js/commit/6e34870)  Bump browserslist from 4.16.0 to 4.16.6
+
 ## [v1.0.13] - 2021-05-17
 
 [Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v1.0.13) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v1.0.12...v1.0.13) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v1.0.13) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v1.0.13.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v1.0.13.tar.gz))
