@@ -48,33 +48,26 @@ export default class Feedback {
 			}
 		}
 
-		options = Object.assign({}, defaultOptions, options)
+		// Parse the provided options and merge with defaults
+		this.options = Object.assign({}, defaultOptions, options)
 
-		this.options = options
-
-	}
-
-	/**
-	 * Attach feedback styles and button to current page
-	 * @param {boolean} renderButton Render the default button
-	 */
-	attach(renderButton = true) {
+		// Create a new root element for feedback-js to place it's elements in
 		const div = document.createElement('div')
 		div.id = 'feedback-root'
 		document.body.insertBefore(div, document.body.firstChild)
+		this.root = div
 
+		// Add a comment to the dom
 		const comment = document.createComment('feedback-js modal code')
 		document.body.insertBefore(comment, document.body.firstChild)
 
-		this.root = div
-
+		// Add the required styles to the page
 		this._addStyle()
-
-		if (renderButton || this.options.forceShowButton) {
-			this.renderButton()
-		}
 	}
 
+	/**
+	 * Render the default button
+	 */
 	renderButton() {
 		if (!this.root) return
 
@@ -97,6 +90,9 @@ export default class Feedback {
 		})
 	}
 
+	/**
+	 * Render the feedback modal
+	 */
 	renderModal() {
 		if (!this.root) return
 
@@ -138,14 +134,12 @@ export default class Feedback {
 		})
 	}
 
-	closeModal() {
-		this.root.innerHTML = ''
-
-		if (this.showDefaultBtn) {
-			this.renderButton()
-		}
-	}
-
+	/**
+	 * Render the form for the given feedback type.
+	 *
+	 * The type needs to be specified in the `types` option.
+	 * @param {String} type Feedback Type
+	 */
 	renderForm(type) {
 		if (!this.root) return
 
@@ -195,6 +189,24 @@ export default class Feedback {
 		})
 	}
 
+	/**
+	 * Close/hide the feedback modal.
+	 *
+	 * If the default button was rendered before, it will be shown again.
+	 */
+	closeModal() {
+		this.root.innerHTML = ''
+
+		if (this.showDefaultBtn) {
+			this.renderButton()
+		}
+	}
+
+	/**
+	 * Submit the form.
+	 *
+	 * Will be called when the user clicks submit.
+	 */
 	submitForm() {
 		const message = document.getElementById('feedback-message').value
 		const email = this.options.emailField ? document.getElementById('feedback-email').value : undefined
@@ -210,52 +222,39 @@ export default class Feedback {
 		if (this.options.events) {
 			const event = new CustomEvent('feedback-submit', { detail: data })
 			window.dispatchEvent(event)
-			this._renderSuccess()
+			this.renderSuccess()
 			return
 		}
 
-		this.sendToEndpoint(data.feedbackType, data.message, data.url, data.email)
+		this.sendToEndpoint(data)
 	}
 
 	/**
-	 * Send feedback to backend
-	 * @param {string} feedbackType - type of feedback
-	 * @param {string} message - the actual feedback message
-	 * @param {string} [url] - url/page the feedback was collected on
-	 * @param {string} [email] - email of user optional
+	 * Send the given feedback to the specified endpoint.
+	 * @param {Object} data - the feedback data
 	 */
-	sendToEndpoint(feedbackType, message, url, email) {
-		if (!feedbackType || !message) {
-			if (!this.root) throw new Error('missing parameters')
-			return
-		}
-
-		const parsedData = {
-			id: this.options.id,
-			email: email,
-			feedbackType: feedbackType,
-			url: url,
-			message: message
-		}
-
-		this._renderLoading()
+	sendToEndpoint(data) {
+		this.renderLoading()
 
 		const request = new XMLHttpRequest()
 		request.open('POST', this.options.endpoint)
 		request.setRequestHeader('Content-type', 'application/json')
-		request.send(JSON.stringify(parsedData))
+		request.send(JSON.stringify(data))
 		request.onreadystatechange = () => {
 			if (request.readyState === 4) {
 				if (request.status === 200) {
-					return this._renderSuccess()
+					return this.renderSuccess()
 				}
 
-				this._renderFailed()
+				this.renderFailed()
 			}
 		}
 	}
 
-	_renderLoading() {
+	/**
+	 * Render the loading state.
+	 */
+	renderLoading() {
 		if (!this.root) return
 
 		const html = `
@@ -270,7 +269,10 @@ export default class Feedback {
 		})
 	}
 
-	_renderSuccess() {
+	/**
+	 * Render the success state.
+	 */
+	renderSuccess() {
 		if (!this.root) return
 
 		const html = `
@@ -288,7 +290,10 @@ export default class Feedback {
 		}, 3000)
 	}
 
-	_renderFailed() {
+	/**
+	 * Render the failed state.
+	 */
+	renderFailed() {
 		if (!this.root) return
 
 		const html = `

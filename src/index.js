@@ -17,12 +17,14 @@ const detect = () => {
 	const options = JSON.parse(attributeValue)
 
 	window.addEventListener('load', () => {
+		// Initialize the widget and attach styles
 		window.feedback = new Feedback(options)
 
+		// Render the default button
 		const renderDefaultButton = buttonElems.length < 1
-
-		// Initalize the feedback widget
-		window.feedback.attach(renderDefaultButton)
+		if (renderDefaultButton || window.feedback.options.forceShowButton) {
+			window.feedback.renderButton()
+		}
 
 		// Attach event listeners to data-drkmd-toggle elements
 		if (!renderDefaultButton) {
@@ -31,12 +33,7 @@ const detect = () => {
 					window.feedback.renderModal()
 				})
 			})
-
-			return
 		}
-
-		// Render default button
-		window.feedback.renderButton()
 	})
 }
 
