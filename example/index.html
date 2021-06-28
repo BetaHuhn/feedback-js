@@ -17,17 +17,5 @@
 <body>
 </body>
 
-<script src="../dist/feedback-js.min.js"></script>
-<script>
-    function addFeedback() {
-        const options = {
-            id: 'test',
-            endpoint: 'http://172.21.52.196:6600/form/feedback',
-			contactLink: 'mailto:hello@mxis.ch?subject=Feedback'
-        }
-        
-        new Feedback(options).attach();
-    }
-    window.addEventListener('load', addFeedback);
-</script>
+<script src="../dist/feedback-js.min.js" data-feedback-opts='{ "id": "test", "endpoint": "http://172.21.52.196:6600/form/feedback", "emailField": true }'></script>
 </html>
