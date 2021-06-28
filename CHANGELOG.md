@@ -1,3 +1,26 @@
+## [v2.0.0] - 2021-06-28
+
+[Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v2.0.0) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v1.0.16...v2.0.0) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v2.0.0) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v2.0.0.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v2.0.0.tar.gz))
+
+### New features
+
+- [`fda8a91`](https://github.com/BetaHuhn/feedback-js/commit/fda8a91)  Custom feedback types (#51)
+(Issues: [`#51`](https://github.com/BetaHuhn/feedback-js/issues/51))- [`bc6d84e`](https://github.com/BetaHuhn/feedback-js/commit/bc6d84e)  Dispatch event for custom submission methods (#16)
+(Issues: [`#16`](https://github.com/BetaHuhn/feedback-js/issues/16))- [`2956a68`](https://github.com/BetaHuhn/feedback-js/commit/2956a68)  Use data attributes to specify opts
+- [`2d758cb`](https://github.com/BetaHuhn/feedback-js/commit/2d758cb)  Use data attribute to specify custom trigger
+
+### Updates
+
+- [`a61b369`](https://github.com/BetaHuhn/feedback-js/commit/a61b369)  💥 Rename internal methods and remove attach method
+
+### Dependency updates
+
+- [`889e04c`](https://github.com/BetaHuhn/feedback-js/commit/889e04c)  Upgrade dependencies
+
+### Breaking changes
+
+- [`1a99dea`](https://github.com/BetaHuhn/feedback-js/commit/1a99dea)  Rename internal methods and remove attach method
+
 ## [v1.0.16] - 2021-06-28
 
 [Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v1.0.16) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v1.0.15...v1.0.16) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v1.0.16) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v1.0.16.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v1.0.16.tar.gz))
