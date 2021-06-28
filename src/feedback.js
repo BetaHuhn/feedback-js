@@ -14,6 +14,7 @@ export default class Feedback {
 		const defaultOptions = {
 			id: 'feedback',
 			endpoint: '',
+			events: false,
 			emailField: false,
 			btnTitle: 'Feedback',
 			title: 'Feedback',
@@ -157,8 +158,24 @@ export default class Feedback {
 		const submit = document.getElementById('feedback-submit')
 		submit.addEventListener('click', () => {
 			const message = document.getElementById('feedback-message').value
-			const email = this.options.emailField ? document.getElementById('feedback-email').value : ''
-			this.send(this.current, message, window.location.href, email.length > 0 ? email : undefined)
+			const email = this.options.emailField ? document.getElementById('feedback-email').value : undefined
+
+			const data = {
+				id: this.options.id,
+				email: email,
+				feedbackType: this.current,
+				url: window.location.href,
+				message: message
+			}
+
+			if (this.options.events) {
+				const event = new CustomEvent('feedback-submit', { detail: data })
+				window.dispatchEvent(event)
+				this._renderSuccess()
+				return
+			}
+
+			this.send(data.feedbackType, data.message, data.url, data.email)
 		})
 	}
 
