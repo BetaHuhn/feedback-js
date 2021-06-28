@@ -218,7 +218,7 @@ const options = {
     types: {
         general: {
             text: 'General Feedback',
-            icon: '⚠'
+            icon: '⚠️'
         },
         idea: {
             text: 'I have an idea',
@@ -226,7 +226,7 @@ const options = {
         },
         love: {
             text: 'Send love',
-            icon: '❤'
+            icon: '💖'
         }
     }
 }
