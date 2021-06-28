@@ -6,8 +6,7 @@
   "scripts": {
     "lint": "eslint ./src/",
     "watch": "watch 'npm run build' ./src/ --interval=1",
-    "build": "node build.js",
-    "semantic-release": "semantic-release"
+    "build": "node build.js"
   },
   "repository": {
     "type": "git",

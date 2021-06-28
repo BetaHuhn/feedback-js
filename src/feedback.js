@@ -21,12 +21,29 @@ export default class Feedback {
 			contactLink: '',
 			typeMessage: 'What feedback do you have?',
 			success: 'Thanks! 👊',
+			inputPlaceholder: 'Your feedback goes here!',
+			submitText: 'Submit',
+			backText: 'Back',
 			failedTitle: 'Oops, an error ocurred!',
 			failedMessage: 'Please try again. If this keeps happening, try to send an email instead.',
 			position: 'right',
 			primary: 'rgb(53, 222, 118)',
 			background: '#fff',
-			color: '#000'
+			color: '#000',
+			types: {
+				general: {
+					text: 'General Feedback',
+					icon: '😁'
+				},
+				idea: {
+					text: 'I have an idea',
+					icon: '💡'
+				},
+				bug: {
+					text: 'I found an issue',
+					icon: '🐞'
+				}
+			}
 		}
 
 		options = Object.assign({}, defaultOptions, options)
@@ -68,18 +85,7 @@ export default class Feedback {
 					<div class="feedback-content">
 						<p>${ this.options.typeMessage }</p>
 						<div class="feedback-content-list">
-							<button id="feedback-general" class="feedback-item">
-								<span>😁</span>
-								General feedback
-							</button>
-							<button id="feedback-idea" class="feedback-item">
-								<span>💡</span>
-								I have an idea
-							</button>
-							<button id="feedback-issue" class="feedback-item">
-								<span>🐞</span>
-								I found an issue
-							</button>
+							${ Object.entries(this.options.types).reduce((prev, [ id, item ]) => prev += `<button id="feedback-item-${ id }" class="feedback-item"><span>${ item.icon }</span>${ item.text }</button>`, '') }
 						</div>
 					</div>
 				</div>
@@ -98,23 +104,16 @@ export default class Feedback {
 			this._renderButton()
 		})
 
-		const general = document.getElementById('feedback-general')
-		general.addEventListener('click', () => {
-			this._renderForm('general', '😁 General feedback', 'Your feedback goes here!')
-		})
+		Object.entries(this.options.types).forEach(([ id, item ]) => {
+			const elem = document.getElementById(`feedback-item-${ id }`)
 
-		const idea = document.getElementById('feedback-idea')
-		idea.addEventListener('click', () => {
-			this._renderForm('idea', '💡 I have an idea', 'Tell me all about it!')
-		})
-
-		const issue = document.getElementById('feedback-issue')
-		issue.addEventListener('click', () => {
-			this._renderForm('issue', '🐞 I found an issue', 'What happened?')
+			elem.onclick = () => {
+				this._renderForm(id, `${ item.icon } ${ item.text }`)
+			}
 		})
 	}
 
-	_renderForm(type, title, message) {
+	_renderForm(type, title) {
 		if (!this.root) return
 
 		const html = `
@@ -125,10 +124,10 @@ export default class Feedback {
 					</div>
 					<div class="feedback-content">
 							${ this.options.emailField ? '<input id="feedback-email" type="email" name="email" placeholder="Email address (optional)">' : '' }
-							<textarea id="feedback-message" name="feedback" autofocus type="text" maxlength="500" rows="5" placeholder="${ message }"></textarea>
+							<textarea id="feedback-message" name="feedback" autofocus type="text" maxlength="500" rows="5" placeholder="${ this.options.inputPlaceholder }"></textarea>
 							<div id="feedback-actions" class="feedback-actions">
-								<button type="button" id="feedback-back">Back</button>
-								<button type="submit" id="feedback-submit">Submit</button>
+								<button type="button" id="feedback-back">${ this.options.backText }</button>
+								<button type="submit" id="feedback-submit">${ this.options.submitText }</button>
 							</div>
 					</div>
 				</div>
