@@ -3,9 +3,10 @@ export default Feedback
 
 const detect = () => {
 	const optsElem = document.querySelector('[data-feedback-opts]')
+	const buttonElems = document.querySelectorAll('[data-feedback-trigger]')
 
 	// If no attributes are found, assume programmatic usage and attach Feedback class to window
-	if (!optsElem) {
+	if (!optsElem && buttonElems.length < 1) {
 		window.Feedback = Feedback
 
 		return
@@ -18,8 +19,24 @@ const detect = () => {
 	window.addEventListener('load', () => {
 		window.feedback = new Feedback(options)
 
-		// Attach the feedback button to the page
-		window.feedback.attach()
+		const renderDefaultButton = buttonElems.length < 1
+
+		// Initalize the feedback widget
+		window.feedback.attach(renderDefaultButton)
+
+		// Attach event listeners to data-drkmd-toggle elements
+		if (!renderDefaultButton) {
+			buttonElems.forEach((item) => {
+				item.addEventListener('click', () => {
+					window.feedback.renderModal()
+				})
+			})
+
+			return
+		}
+
+		// Render default button
+		window.feedback.renderButton()
 	})
 }
 

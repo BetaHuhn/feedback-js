@@ -16,6 +16,7 @@ export default class Feedback {
 			endpoint: '',
 			events: false,
 			emailField: false,
+			forceShowButton: false,
 			btnTitle: 'Feedback',
 			title: 'Feedback',
 			contactText: 'Want to chat?',
@@ -53,8 +54,31 @@ export default class Feedback {
 
 	}
 
-	_renderButton() {
+	/**
+	 * Attach feedback styles and button to current page
+	 * @param {boolean} renderButton Render the default button
+	 */
+	attach(renderButton = true) {
+		const div = document.createElement('div')
+		div.id = 'feedback-root'
+		document.body.insertBefore(div, document.body.firstChild)
+
+		const comment = document.createComment('feedback-js modal code')
+		document.body.insertBefore(comment, document.body.firstChild)
+
+		this.root = div
+
+		this._addStyle()
+
+		if (renderButton || this.options.forceShowButton) {
+			this.renderButton()
+		}
+	}
+
+	renderButton() {
 		if (!this.root) return
+
+		this.showDefaultBtn = true
 
 		const html = `
 			<div class="feedback-btn-wrapper">
@@ -69,11 +93,11 @@ export default class Feedback {
 
 		const button = document.getElementById('feedback-btn')
 		button.addEventListener('click', () => {
-			this._renderView()
+			this.renderModal()
 		})
 	}
 
-	_renderView() {
+	renderModal() {
 		if (!this.root) return
 
 		const html = `
@@ -102,26 +126,36 @@ export default class Feedback {
 
 		const button = document.getElementById('feedback-close')
 		button.addEventListener('click', () => {
-			this._renderButton()
+			this.closeModal()
 		})
 
-		Object.entries(this.options.types).forEach(([ id, item ]) => {
+		Object.keys(this.options.types).forEach((id) => {
 			const elem = document.getElementById(`feedback-item-${ id }`)
 
 			elem.onclick = () => {
-				this._renderForm(id, `${ item.icon } ${ item.text }`)
+				this.renderForm(id)
 			}
 		})
 	}
 
-	_renderForm(type, title) {
+	closeModal() {
+		this.root.innerHTML = ''
+
+		if (this.showDefaultBtn) {
+			this.renderButton()
+		}
+	}
+
+	renderForm(type) {
 		if (!this.root) return
+
+		const feedbackType = this.options.types[type]
 
 		const html = `
 			<div class="feedback-wrapper">
 				<div class="feedback-main">
 					<div class="feedback-header">
-						<p>${ title }</p>
+						<p>${ feedbackType.icon } ${ feedbackType.text }</p>
 					</div>
 					<div class="feedback-content">
 							${ this.options.emailField ? '<input id="feedback-email" type="email" name="email" placeholder="Email address (optional)">' : '' }
@@ -147,98 +181,40 @@ export default class Feedback {
 
 		const button = document.getElementById('feedback-close')
 		button.addEventListener('click', () => {
-			this._renderButton()
+			this.closeModal()
 		})
 
 		const back = document.getElementById('feedback-back')
 		back.addEventListener('click', () => {
-			this._renderView()
+			this.renderModal()
 		})
 
 		const submit = document.getElementById('feedback-submit')
 		submit.addEventListener('click', () => {
-			const message = document.getElementById('feedback-message').value
-			const email = this.options.emailField ? document.getElementById('feedback-email').value : undefined
-
-			const data = {
-				id: this.options.id,
-				email: email,
-				feedbackType: this.current,
-				url: window.location.href,
-				message: message
-			}
-
-			if (this.options.events) {
-				const event = new CustomEvent('feedback-submit', { detail: data })
-				window.dispatchEvent(event)
-				this._renderSuccess()
-				return
-			}
-
-			this.send(data.feedbackType, data.message, data.url, data.email)
+			this.submitForm()
 		})
 	}
 
-	_renderLoading() {
-		if (!this.root) return
+	submitForm() {
+		const message = document.getElementById('feedback-message').value
+		const email = this.options.emailField ? document.getElementById('feedback-email').value : undefined
 
-		const html = `
-			<button id="feedback-loading"><div class="feedback-loader"><div></div><div></div><div></div><div></div></div>Loading</button>
-		`
+		const data = {
+			id: this.options.id,
+			email: email,
+			feedbackType: this.current,
+			url: window.location.href,
+			message: message
+		}
 
-		document.getElementById('feedback-actions').innerHTML = html
+		if (this.options.events) {
+			const event = new CustomEvent('feedback-submit', { detail: data })
+			window.dispatchEvent(event)
+			this._renderSuccess()
+			return
+		}
 
-		const button = document.getElementById('feedback-close')
-		button.addEventListener('click', () => {
-			this._renderButton()
-		})
-	}
-
-	_renderSuccess() {
-		if (!this.root) return
-
-		const html = `
-			<div class="feedback-btn-wrapper">
-				<button id="feedback-btn" title="Give feedback">
-					<span>${ this.options.success }</span>
-				</button>
-			</div>
-		`
-
-		this.root.innerHTML = html
-
-		setTimeout(() => {
-			this._renderButton()
-		}, 3000)
-	}
-
-	_renderFailed() {
-		if (!this.root) return
-
-		const html = `
-			<div class="feedback-wrapper">
-				<div class="feedback-main">
-					<div class="feedback-header">
-						<p>${ this.options.failedTitle }</p>
-					</div>
-					<div class="feedback-content">
-						<p>${ this.options.failedMessage }</p>
-					</div>
-				</div>
-				<div class="feedback-close">
-					<button id="feedback-close">
-						<svg class="w-5 h-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12"></path></svg>
-					</button>
-				</div>
-			</div>
-		`
-
-		this.root.innerHTML = html
-
-		const button = document.getElementById('feedback-close')
-		button.addEventListener('click', () => {
-			this._renderButton()
-		})
+		this.sendToEndpoint(data.feedbackType, data.message, data.url, data.email)
 	}
 
 	/**
@@ -248,7 +224,7 @@ export default class Feedback {
 	 * @param {string} [url] - url/page the feedback was collected on
 	 * @param {string} [email] - email of user optional
 	 */
-	send(feedbackType, message, url, email) {
+	sendToEndpoint(feedbackType, message, url, email) {
 		if (!feedbackType || !message) {
 			if (!this.root) throw new Error('missing parameters')
 			return
@@ -279,21 +255,66 @@ export default class Feedback {
 		}
 	}
 
-	/**
-	 * Attach feedback button to current page
-	 */
-	attach() {
-		const div = document.createElement('div')
-		div.id = 'feedback-root'
-		document.body.insertBefore(div, document.body.firstChild)
+	_renderLoading() {
+		if (!this.root) return
 
-		const comment = document.createComment('feedback-js modal code')
-		document.body.insertBefore(comment, document.body.firstChild)
+		const html = `
+			<button id="feedback-loading"><div class="feedback-loader"><div></div><div></div><div></div><div></div></div>Loading</button>
+		`
 
-		this.root = div
+		document.getElementById('feedback-actions').innerHTML = html
 
-		this._addStyle()
-		this._renderButton()
+		const button = document.getElementById('feedback-close')
+		button.addEventListener('click', () => {
+			this.closeModal()
+		})
+	}
+
+	_renderSuccess() {
+		if (!this.root) return
+
+		const html = `
+			<div class="feedback-btn-wrapper">
+				<button id="feedback-btn" title="Give feedback">
+					<span>${ this.options.success }</span>
+				</button>
+			</div>
+		`
+
+		this.root.innerHTML = html
+
+		setTimeout(() => {
+			this.renderButton()
+		}, 3000)
+	}
+
+	_renderFailed() {
+		if (!this.root) return
+
+		const html = `
+			<div class="feedback-wrapper">
+				<div class="feedback-main">
+					<div class="feedback-header">
+						<p>${ this.options.failedTitle }</p>
+					</div>
+					<div class="feedback-content">
+						<p>${ this.options.failedMessage }</p>
+					</div>
+				</div>
+				<div class="feedback-close">
+					<button id="feedback-close">
+						<svg class="w-5 h-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12"></path></svg>
+					</button>
+				</div>
+			</div>
+		`
+
+		this.root.innerHTML = html
+
+		const button = document.getElementById('feedback-close')
+		button.addEventListener('click', () => {
+			this.closeModal()
+		})
 	}
 
 	_addStyle() {
