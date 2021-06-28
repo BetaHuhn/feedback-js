@@ -3,18 +3,20 @@ export default Feedback
 
 const detect = () => {
 	const optsElem = document.querySelector('[data-feedback-opts]')
+	const endpointElem = document.querySelector('[data-feedback-endpoint]')
 	const buttonElems = document.querySelectorAll('[data-feedback-trigger]')
 
 	// If no attributes are found, assume programmatic usage and attach Feedback class to window
-	if (!optsElem && buttonElems.length < 1) {
+	if (!optsElem && !endpointElem && buttonElems.length < 1) {
 		window.Feedback = Feedback
 
 		return
 	}
 
-	// Parse options specified in data-feedback-opts attribute
+	// Parse options specified in data-feedback-opts and data-feedback-endpoint attributes
 	const attributeValue = optsElem && optsElem.getAttribute('data-feedback-opts') || '{}'
-	const options = JSON.parse(attributeValue)
+	const endpointValue = endpointElem && { endpoint: endpointElem.getAttribute('data-feedback-endpoint') } || {}
+	const options = Object.assign({}, JSON.parse(attributeValue), endpointValue)
 
 	window.addEventListener('load', () => {
 		// Initialize the widget and attach styles
