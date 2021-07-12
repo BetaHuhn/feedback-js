@@ -13,6 +13,7 @@ export default class Feedback {
 
 		const defaultOptions = {
 			id: 'feedback',
+			emailplaceholder: 'Email (optional)',
 			endpoint: '',
 			events: false,
 			emailField: false,
@@ -152,7 +153,7 @@ export default class Feedback {
 						<p>${ feedbackType.icon } ${ feedbackType.text }</p>
 					</div>
 					<div class="feedback-content">
-							${ this.options.emailField ? '<input id="feedback-email" type="email" name="email" placeholder="Email address (optional)">' : '' }
+							${ this.options.emailField ? '<input id="feedback-email" type="email" name="email" placeholder="${ this.options.emailplaceholder }">' : '' }
 							<textarea id="feedback-message" name="feedback" autofocus type="text" maxlength="500" rows="5" placeholder="${ this.options.inputPlaceholder }"></textarea>
 							<div id="feedback-actions" class="feedback-actions">
 								<button type="button" id="feedback-back">${ this.options.backText }</button>
