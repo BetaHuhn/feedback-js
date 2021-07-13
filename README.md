@@ -164,6 +164,7 @@ const options = {
     btnTitle: 'Feedback', // title of button
     title: 'Company Feedback', // text at the top
     inputPlaceholder: 'Your feedback goes here!',
+    emailPlaceholder: 'Email address (optional)',
     submitText: 'Submit', // text for submit button
 	backText: 'Back', // text for back button
     contactText: 'Or send an email!', // text for other contact option
