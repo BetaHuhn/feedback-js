@@ -1,3 +1,16 @@
+## [v2.1.0] - 2021-07-13
+
+[Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v2.1.0) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v2.0.1...v2.1.0) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v2.1.0) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v2.1.0.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v2.1.0.tar.gz))
+
+### New features
+
+- [`eea1ab5`](https://github.com/BetaHuhn/feedback-js/commit/eea1ab5)  Add option to customize the email placeholder (#58)
+(Issues: [`#58`](https://github.com/BetaHuhn/feedback-js/issues/58))
+
+### Dependency updates
+
+- [`0d835bf`](https://github.com/BetaHuhn/feedback-js/commit/0d835bf)  Upgrade dependencies
+
 ## [v2.0.1] - 2021-07-12
 
 [Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v2.0.1) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v2.0.0...v2.0.1) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v2.0.1) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v2.0.1.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v2.0.1.tar.gz))
