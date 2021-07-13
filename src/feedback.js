@@ -24,7 +24,7 @@ export default class Feedback {
 			typeMessage: 'What feedback do you have?',
 			success: 'Thanks! 👊',
 			inputPlaceholder: 'Your feedback goes here!',
-			emailPlaceholder: 'Email (optional)',
+			emailPlaceholder: 'Email address (optional)',
 			submitText: 'Submit',
 			backText: 'Back',
 			failedTitle: 'Oops, an error ocurred!',
