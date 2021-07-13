@@ -24,6 +24,7 @@ export default class Feedback {
 			typeMessage: 'What feedback do you have?',
 			success: 'Thanks! 👊',
 			inputPlaceholder: 'Your feedback goes here!',
+			emailPlaceholder: 'Email address (optional)',
 			submitText: 'Submit',
 			backText: 'Back',
 			failedTitle: 'Oops, an error ocurred!',
@@ -152,7 +153,7 @@ export default class Feedback {
 						<p>${ feedbackType.icon } ${ feedbackType.text }</p>
 					</div>
 					<div class="feedback-content">
-							${ this.options.emailField ? '<input id="feedback-email" type="email" name="email" placeholder="Email address (optional)">' : '' }
+							${ this.options.emailField ? `<input id="feedback-email" type="email" name="email" placeholder="${ this.options.emailPlaceholder }">` : '' }
 							<textarea id="feedback-message" name="feedback" autofocus type="text" maxlength="500" rows="5" placeholder="${ this.options.inputPlaceholder }"></textarea>
 							<div id="feedback-actions" class="feedback-actions">
 								<button type="button" id="feedback-back">${ this.options.backText }</button>
