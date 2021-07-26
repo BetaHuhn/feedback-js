@@ -1,3 +1,11 @@
+## [v2.1.1] - 2021-07-26
+
+[Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v2.1.1) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v2.1.0...v2.1.1) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v2.1.1) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v2.1.1.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v2.1.1.tar.gz))
+
+### Dependency updates
+
+- [`e060bf6`](https://github.com/BetaHuhn/feedback-js/commit/e060bf6)  Bump eslint from 7.30.0 to 7.31.0
+
 ## [v2.1.0] - 2021-07-13
 
 [Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v2.1.0) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v2.0.1...v2.1.0) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v2.1.0) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v2.1.0.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v2.1.0.tar.gz))
