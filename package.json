@@ -1,6 +1,6 @@
 {
   "name": "@betahuhn/feedback-js",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Simple self-hosted feedback modal for any website",
   "main": "dist/feedback-js.min.js",
   "scripts": {
