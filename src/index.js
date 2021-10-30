@@ -18,29 +18,29 @@ const detect = () => {
 	const endpointValue = endpointElem && { endpoint: endpointElem.getAttribute('data-feedback-endpoint') } || {}
 	const options = Object.assign({}, JSON.parse(attributeValue), endpointValue)
 
-	window.addEventListener('load', () => {
-		// Initialize the widget and attach styles
-		window.feedback = new Feedback(options)
+	// Initialize the widget and attach styles
+	window.feedback = new Feedback(options)
 
-		// Render the default button
-		const renderDefaultButton = buttonElems.length < 1
-		if (renderDefaultButton || window.feedback.options.forceShowButton) {
-			window.feedback.renderButton()
-		}
+	// Render the default button
+	const renderDefaultButton = buttonElems.length < 1
+	if (renderDefaultButton || window.feedback.options.forceShowButton) {
+		window.feedback.renderButton()
+	}
 
-		// Attach event listeners to data-drkmd-toggle elements
-		if (!renderDefaultButton) {
-			buttonElems.forEach((item) => {
-				item.addEventListener('click', () => {
-					window.feedback.renderModal()
-				})
+	// Attach event listeners to data-drkmd-toggle elements
+	if (!renderDefaultButton) {
+		buttonElems.forEach((item) => {
+			item.addEventListener('click', () => {
+				window.feedback.renderModal()
 			})
-		}
-	})
+		})
+	}
 }
 
 if (IS_BROWSER) {
-	detect()
+	window.addEventListener('DOMContentLoaded', () => {
+		detect()
+	})
 } else {
 	console.warn('[feedback-js] Detected environment without a `window` object')
 }
