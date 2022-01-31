@@ -1,3 +1,13 @@
+## [v2.1.7] - 2022-01-31
+
+[Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v2.1.7) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v2.1.6...v2.1.7) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v2.1.7) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v2.1.7.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v2.1.7.tar.gz))
+
+### Dependency updates
+
+- [`2731711`](https://github.com/BetaHuhn/feedback-js/commit/2731711)  Bump cached-path-relative from 1.0.2 to 1.1.0
+- [`386202b`](https://github.com/BetaHuhn/feedback-js/commit/386202b)  Bump trim-off-newlines from 1.0.1 to 1.0.3
+- [`a3faad2`](https://github.com/BetaHuhn/feedback-js/commit/a3faad2)  Bump node-fetch from 2.6.2 to 2.6.7
+
 ## [v2.1.6] - 2022-01-17
 
 [Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v2.1.6) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v2.1.5...v2.1.6) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v2.1.6) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v2.1.6.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v2.1.6.tar.gz))
