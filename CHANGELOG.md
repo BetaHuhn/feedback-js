@@ -1,3 +1,11 @@
+## [v2.1.11] - 2022-06-06
+
+[Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v2.1.11) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v2.1.10...v2.1.11) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v2.1.11) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v2.1.11.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v2.1.11.tar.gz))
+
+### Dependency updates
+
+- [`dd14464`](https://github.com/BetaHuhn/feedback-js/commit/dd14464)  Bump semver-regex from 3.1.3 to 3.1.4
+
 ## [v2.1.10] - 2022-04-18
 
 [Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v2.1.10) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v2.1.9...v2.1.10) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v2.1.10) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v2.1.10.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v2.1.10.tar.gz))
