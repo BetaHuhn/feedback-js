@@ -1,3 +1,11 @@
+## [v2.1.13] - 2022-07-11
+
+[Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v2.1.13) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v2.1.12...v2.1.13) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v2.1.13) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v2.1.13.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v2.1.13.tar.gz))
+
+### Dependency updates
+
+- [`c4f8d25`](https://github.com/BetaHuhn/feedback-js/commit/c4f8d25)  Bump parse-url from 6.0.0 to 6.0.2
+
 ## [v2.1.12] - 2022-06-27
 
 [Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v2.1.12) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v2.1.11...v2.1.12) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v2.1.12) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v2.1.12.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v2.1.12.tar.gz))
