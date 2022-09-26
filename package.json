@@ -24,7 +24,7 @@
   ],
   "devDependencies": {
     "@betahuhn/config": "^1.1.0",
-    "eslint": "^7.29.0",
+    "eslint": "^8.24.0",
     "rosid-handler-js": "^13.0.0",
     "watch": "^1.0.2"
   },
