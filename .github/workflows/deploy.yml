@@ -10,7 +10,7 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.1.0
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
@@ -33,7 +33,7 @@ jobs:
     name: Upload to CDN
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v3.1.0
       - uses: BetaHuhn/do-spaces-action@master
         with:
           access_key: ${{ secrets.ACCESS_KEY}}
