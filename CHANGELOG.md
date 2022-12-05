@@ -1,3 +1,13 @@
+## [v2.1.19] - 2022-12-05
+
+[Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v2.1.19) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v2.1.18...v2.1.19) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v2.1.19) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v2.1.19.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v2.1.19.tar.gz))
+
+### Dependency updates
+
+- [`1ade791`](https://github.com/BetaHuhn/feedback-js/commit/1ade791)  Bump stefanzweifel/git-auto-commit-action
+- [`1b83665`](https://github.com/BetaHuhn/feedback-js/commit/1b83665)  Bump minimatch from 3.0.4 to 3.1.2
+- [`e61429a`](https://github.com/BetaHuhn/feedback-js/commit/e61429a)  Bump decode-uri-component from 0.2.0 to 0.2.2
+
 ## [v2.1.18] - 2022-11-14
 
 [Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v2.1.18) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v2.1.17...v2.1.18) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v2.1.18) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v2.1.18.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v2.1.18.tar.gz))
