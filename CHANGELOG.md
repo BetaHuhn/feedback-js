@@ -1,3 +1,11 @@
+## [v2.1.22] - 2023-02-06
+
+[Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v2.1.22) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v2.1.21...v2.1.22) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v2.1.22) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v2.1.22.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v2.1.22.tar.gz))
+
+### Dependency updates
+
+- [`eb3041b`](https://github.com/BetaHuhn/feedback-js/commit/eb3041b)  Bump http-cache-semantics from 4.1.0 to 4.1.1
+
 ## [v2.1.21] - 2023-01-09
 
 [Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v2.1.21) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v2.1.20...v2.1.21) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v2.1.21) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v2.1.21.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v2.1.21.tar.gz))
