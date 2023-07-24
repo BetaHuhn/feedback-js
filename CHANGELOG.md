@@ -1,3 +1,11 @@
+## [v2.1.23] - 2023-07-24
+
+[Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v2.1.23) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v2.1.22...v2.1.23) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v2.1.23) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v2.1.23.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v2.1.23.tar.gz))
+
+### Dependency updates
+
+- [`555170a`](https://github.com/BetaHuhn/feedback-js/commit/555170a)  Bump word-wrap from 1.2.3 to 1.2.4
+
 ## [v2.1.22] - 2023-02-06
 
 [Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v2.1.22) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v2.1.21...v2.1.22) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v2.1.22) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v2.1.22.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v2.1.22.tar.gz))
