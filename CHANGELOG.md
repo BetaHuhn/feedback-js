@@ -1,3 +1,11 @@
+## [v2.1.25] - 2023-10-30
+
+[Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v2.1.25) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v2.1.24...v2.1.25) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v2.1.25) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v2.1.25.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v2.1.25.tar.gz))
+
+### Dependency updates
+
+- [`bc893c8`](https://github.com/BetaHuhn/feedback-js/commit/bc893c8)  Bump browserify-sign from 4.2.1 to 4.2.2
+
 ## [v2.1.24] - 2023-10-23
 
 [Release notes](https://github.com/BetaHuhn/feedback-js/releases/tag/v2.1.24) · [Compare](https://github.com/BetaHuhn/feedback-js/compare/v2.1.23...v2.1.24) · [Tag](https://github.com/BetaHuhn/feedback-js/tree/v2.1.24) · Archive ([zip](https://github.com/BetaHuhn/feedback-js/archive/v2.1.24.zip) · [tar.gz](https://github.com/BetaHuhn/feedback-js/archive/v2.1.24.tar.gz))
