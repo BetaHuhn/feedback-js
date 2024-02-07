@@ -286,9 +286,12 @@ export default class Feedback {
 
 		this.root.innerHTML = html
 
-		setTimeout(() => {
-			this.renderButton()
-		}, 3000)
+		
+		if (this.showDefaultBtn) {
+			setTimeout(() => {
+				this.renderButton()
+			}, 3000)
+		}
 	}
 
 	/**
